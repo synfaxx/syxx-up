@@ -10,45 +10,46 @@
 </head>
 <body>
 	<section class="page df">
-		<div class="page__content">
+		<div class="page__content df">
 			<div class="form">
 				<div class="form__title-wrap unselect">
 					<div class="form__image-wrap df">
-						<img src="images/logo/synfaxx-logo.svg" alt="Synfaxx Logo">
+						<img src="images/logo/syxx-up.svg" alt="syxx up">
 					</div>
-					<h1 class="form__title">Вход разрешён только <span>Отцу</span></h1>
 				</div>
 				<div class="form__form">
 					<div class="form__select-wrap">
-						<h3 class="form__select-title">Выберите сайт</h3>
+						<h3 class="form__select-title">Select a site</h3>
 						<div class="select unselect">
-							<div class="select__main" data-link="17-29-29-25-28-36-37-37-28-34-33-33-5-0-3-38-16-18-29-17-30-11-38-18-24-37-15-27-24-23-29-39-14-23-13-37">Front-End Разработчик</div>
+							<div class="select__main" data-link="17-29-29-25-28-36-37-37-28-34-33-33-5-0-3-38-16-18-29-17-30-11-38-18-24-37-15-27-24-23-29-39-14-23-13-37">Front-End Developer</div>
 							<div class="select__wrapper">
 								<div class="select__option" data-link="17-29-29-25-28-36-37-37-28-34-33-33-5-0-3-38-16-18-29-17-30-11-38-18-24-37-15-27-24-23-29-39-14-23-13-37">
-									<div class="select__option-value">Front-End Разработчик</div>
+									<div class="select__option-value">Front-End Developer</div>
 								</div>
 								<div class="select__option" data-link="17-29-29-25-28-36-37-37-28-34-23-15-10-33-33-38-16-18-29-17-30-11-38-18-24-37-13-27-10-32-37">
-									<div class="select__option-value">Онлайн-сервис Draw</div>
+									<div class="select__option-value">Online service Draw</div>
 								</div>
 								<div class="select__option" data-link="17-29-29-25-28-36-37-37-28-34-23-15-10-33-33-38-16-18-29-17-30-11-38-18-24-37-23-28-37">
-									<div class="select__option-value">Онлайн-сервис NS</div>
+									<div class="select__option-value">Online service NS</div>
 								</div>
 								<div class="select__option" data-link="17-29-29-25-28-36-37-37-28-34-33-33-5-0-3-38-16-18-29-17-30-11-38-18-24-37-28-10-25-14-27-37">
-									<div class="select__option-value">Онлайн-игра Saper</div>
+									<div class="select__option-value">Online game Saper</div>
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="form__input-wrap">
-						<h3 class="form__input-title">Nickname первого друга</h3>
-						<input class="form__input" type="password" name="nickname" maxlength="12">
+						<h3 class="form__input-title">Login</h3>
+						<input class="form__input" type="password" name="login" maxlength="12">
+						<div class="form__input-underline"></div>
 					</div>
 					<div class="form__input-wrap">
-						<h3 class="form__input-title">Пароль</h3>
+						<h3 class="form__input-title">Password</h3>
 						<input class="form__input" type="password" name="password" maxlength="12">
+						<div class="form__input-underline"></div>
 					</div>
 					<div class="form__btn-wrap unselect">
-						<button class="form__btn">Открыть Сайт</button>
+						<button class="form__btn">Open page</button>
 					</div>
 				</div>
 			</div>
@@ -56,11 +57,11 @@
 	</section>
 	<script>
 		((()=>{
-			const nick = localStorage.getItem("nick"), pass = localStorage.getItem("pass"), link = localStorage.getItem("link");
-			const input1 = document.querySelector(`.form__input[name="nickname"]`), input2 = document.querySelector(`.form__input[name="password"]`), main = document.querySelector(`.select__main[data-link]`);
+			const log = localStorage.getItem("log"), pass = localStorage.getItem("pass"), link = localStorage.getItem("link");
+			const input1 = document.querySelector(`.form__input[name="login"]`), input2 = document.querySelector(`.form__input[name="password"]`), main = document.querySelector(`.select__main[data-link]`);
 
-			if (nick) {
-				input1.value = nick;
+			if (log) {
+				input1.value = log;
 				input1.parentNode.childNodes[1].classList.add("form__input-title_hide");
 			};
 
