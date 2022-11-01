@@ -101,8 +101,15 @@
 	</section>
 	<script>
 		((()=>{
-			const log = localStorage.getItem("log"), pass = localStorage.getItem("pass"), link = localStorage.getItem("link");
-			const input1 = document.querySelector(`.form__input[name="login"]`), input2 = document.querySelector(`.form__input[name="password"]`), main = document.querySelector(`.select__main[data-link]`);
+			const
+				log = localStorage.getItem("log"),
+				pass = localStorage.getItem("pass"),
+				link = localStorage.getItem("link");
+			
+			const
+				input1	= document.querySelector(`.form__input[name="login"]`),
+				input2	= document.querySelector(`.form__input[name="password"]`),
+				main		= document.querySelector(`.select__main[data-link]`);
 
 			if (log) {
 				input1.value = log;
@@ -115,8 +122,18 @@
 			};
 
 			if (link) {
+				const activeElement = document.querySelector(`.select__option[data-link="${link}"]`);
+				const scrollParent = document.querySelector(`.select__wrapper`);
+
+				if (!activeElement) {
+					return;
+				};
+
 				main.setAttribute("data-link", link);
-				main.innerText = document.querySelector(`.select__option[data-link="${link}"]`).innerText;
+				main.innerText = activeElement.innerText;
+
+				scrollParent.scrollTop = activeElement.offsetTop;
+				activeElement.classList.add("select__option_active");
 			};
 		}))();
 	</script>
