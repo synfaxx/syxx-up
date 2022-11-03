@@ -25,7 +25,7 @@
 						<div class="select unselect">
 							<div class="select__main" data-link=""></div>
 							<div class="select__wrapper">
-								<div class="select__option" data-link="17-29-29-25-28-36-37-37-28-34-33-33-5-0-3-38-16-18-29-17-30-11-38-18-24-37-28-34-23-15-10-33-33">
+								<div class="select__option select__option_active" data-link="17-29-29-25-28-36-37-37-28-34-33-33-5-0-3-38-16-18-29-17-30-11-38-18-24-37-28-34-23-15-10-33-33">
 									<div class="select__option-value">Portfolio</div>
 								</div>
 								<div class="select__option" data-link="17-29-29-25-28-36-37-37-15-27-14-14-21-10-23-12-14-27-39-14-21-13-10-27-38-16-18-29-17-30-11-38-18-24-37-12-27-24-32-13-22-14">
@@ -110,9 +110,13 @@
 				link = localStorage.getItem("link");
 			
 			const
-				input1	= document.querySelector(`.form__input[name="login"]`),
-				input2	= document.querySelector(`.form__input[name="password"]`),
-				main		= document.querySelector(`.select__main[data-link]`);
+				input1		= document.querySelector(`.form__input[name="login"]`),
+				input2		= document.querySelector(`.form__input[name="password"]`),
+				main			= document.querySelector(`.select__main[data-link]`),
+				firstOption	= document.querySelectorAll(`.select__option`)[0];
+			
+			main.setAttribute("data-link", firstOption.getAttribute("data-link"));
+			main.innerText = firstOption.innerText;
 
 			if (log) {
 				input1.value = log;
@@ -136,6 +140,7 @@
 				main.innerText = activeElement.innerText;
 
 				scrollParent.scrollTop = activeElement.offsetTop;
+				document.querySelector(`.select__option_active`).classList.remove("select__option_active");
 				activeElement.classList.add("select__option_active");
 			};
 		}))();
